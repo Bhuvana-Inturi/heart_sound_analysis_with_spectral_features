@@ -1,0 +1,33 @@
+Project: Heartbeat Classification with Spectral Roll-Off
+Purpose: This project aims to classify heartbeats as normal or abnormal based on audio recordings. The code focuses on extracting spectral roll-off features from the audio data as a preprocessing step for subsequent classification models (not included in this code).
+Data: The code assumes the availability of audio files in WAV format, organized into separate directories for normal and abnormal heartbeats.
+Code Overview:
+•	Imports: Imports necessary libraries for audio processing, data manipulation, and visualization.
+•	Data Loading: Loads abnormal heart audio files from a specified directory.
+•	Noise Injection and Rolloff Calculation:
+o	Adds random noise to each audio file to simulate real-world conditions.
+o	Calculates the spectral rolloff for each noisy audio segment using librosa.feature.spectral_rolloff.
+o	Calculates the mean spectral rolloff for each audio file.
+•	Dataframe Creation: Creates pandas DataFrames to store the spectral rolloff values and noisy audio data.
+Dependencies:
+•	librosa
+•	numpy
+•	pandas
+•	glob
+•	scipy.io.wavfile
+Usage:
+1.	Install the required dependencies using pip install librosa numpy pandas glob scipy.
+2.	Place your audio files in separate directories for normal and abnormal heartbeats.
+3.	Adjust the data_dir1 variable to point to the directory containing abnormal heart data.
+4.	Run the code to process the audio files and calculate spectral rolloff features.
+Limitations:
+•	This code only processes abnormal heart data. Additional code is needed to handle normal heart data.
+•	Noise injection is a simplified approach to simulating real-world conditions. More complex noise models might be considered.
+•	The code does not include classification models. Further development is required to build a complete classification system.
+
+Future Work:
+•	Incorporate normal heart data processing.
+•	Explore different noise models for more realistic simulations.
+•	Implement classification models (e.g., logistic regression, SVM, etc.) using the extracted features.
+•	Evaluate the performance of the classification system using appropriate metrics.
+
